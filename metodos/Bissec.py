@@ -2,16 +2,11 @@
 #     print("Hello World")
 
 def f(x):
-    a = 1
-    b = 0
-    c = 0
+    a,b,c = (1,0,-3)
     return (a*pow(x,2)+b*x+c)
 
 def bisec():
-    err = 0.0001
-    limMin = -1
-    limMax = 1
-    errAtual = 1
+    limMin, limMax, err, errAtual = (1,2,0.01,1)
     while(errAtual>=err):
         x_ns = (limMin + limMax)/2
         f_x_ns = f(x_ns)
@@ -20,6 +15,6 @@ def bisec():
         else:
             limMax = x_ns
         errAtual = abs(limMax-limMin)/2
-    print(x_ns)
+    print("A raiz encontrada foi:" + str(x_ns))
 
 bisec()
